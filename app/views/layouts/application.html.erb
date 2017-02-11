@@ -35,6 +35,11 @@
   	
   	<br class="clear" />
   	<div class="container">
+    <% if flash[:error].present? %>
+      <div class="col-10 offset-1 alert-danger">
+      <%= flash[:error].html_safe %>
+    </div>
+    <% end %>
   		<%= yield %>
   	</div>
   	<div class="footer">
@@ -49,7 +54,6 @@
 	    </div>
     </div>
   </div>
-
-    
+       
   </body>
 </html>
